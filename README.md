@@ -1,7 +1,9 @@
-# SpringIoC_DependencyInjection
+# Spring IoC Dependency Injection
 
 Proje de 2 proje yer almaktadir.
 Spring framework mantigini anlamak icin ayni projeninin 2 farkli versiyonu vardir.
+1.proje : IocDependency
+2.proje : Spring IoC Injection
 
 Proje Amaci: Springin hayatimizdaki onemini anlamaktir. 
 
