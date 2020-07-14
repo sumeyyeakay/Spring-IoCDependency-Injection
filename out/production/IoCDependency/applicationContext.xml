@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <!-- Tek bir yerden degerlerimi kontrol etmek icin  -->
+    <context:property-placeholder location = "classpath:springIoC/values.properties"/>
+
+    <bean id="database" class="springIoC.Model.MsSQLCustomerDal">
+        <property name="connectionString" value="${database.ConnectionString}"/>
+
+
+    </bean>
+
+    <bean id="services" class="springIoC.CustomerManager">
+        <!--<constructor-arg ref="database" /> -->
+
+        <!--Propertiyden biri customerdal ise (sete karsilik geliyor) database ver diyoruz
+            bu yapi const alternatifidir.
+         -->
+        <property name="customerDal" ref="database"/>
+    </bean>
+</beans>
+
+
+
+
+
